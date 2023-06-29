@@ -73,6 +73,58 @@ c = conn.cursor()
 # for item in items:
 # 	print(item)
 
+# Update records
+
+# c.execute("""UPDATE customers SET first_name = 'Bob' WHERE last_name = 'Pas'
+# 	""")
+# conn.commit()
+# c.execute("SELECT * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("""UPDATE customers SET first_name = 'Marty' WHERE last_name = 'Brown'
+#  	""")
+# conn.commit()
+# c.execute("SELECT * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("""UPDATE customers SET first_name = 'Mary' WHERE rowid = 3
+#  	""")
+# conn.commit()
+# c.execute("SELECT * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("""UPDATE customers SET first_name = 'Wes' WHERE rowid = 4
+#  	""")
+# conn.commit()
+# c.execute("SELECT * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("""UPDATE customers SET email = 'mary@gmail.com' WHERE rowid = 3
+#  	""")
+# conn.commit()
+# c.execute("SELECT * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# Use rowid to update
+
+# c.execute("""UPDATE customers SET first_name = 'Bob' WHERE rowid = '6'
+# 	""")
+# conn.commit()
+# c.execute("SELECT rowid, * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
 # Commit our command
 conn.commit()
 
