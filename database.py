@@ -125,6 +125,56 @@ c = conn.cursor()
 # for item in items:
 # 	print(item)
 
+# Delete records
+
+# c.execute("DELETE from customers WHERE rowid = 6")
+# conn.commit()
+# c.execute("SELECT rowid, * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# Query the DB - ORDER BY
+
+# c.execute("SELECT rowid, * FROM customers ORDER BY rowid")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("SELECT rowid, * FROM customers ORDER BY rowid DESC")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("SELECT rowid, * FROM customers ORDER BY last_name DESC")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# AND/OR Clause
+
+# c.execute("SELECT rowid, * FROM customers WHERE last_name LIKE 'Br%' AND rowid = 3")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("SELECT rowid, * FROM customers WHERE last_name LIKE 'Br%' OR rowid = 3")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# Limiting results
+
+# c.execute("SELECT rowid, * FROM customers LIMIT 2")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
+# c.execute("SELECT rowid, * FROM customers ORDER BY rowid DESC LIMIT 2")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
 # Commit our command
 conn.commit()
 
