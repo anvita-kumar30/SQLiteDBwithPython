@@ -18,4 +18,3 @@ database.email_lookup("anvita@gmail.com")
 
 # Show all the records
 database.show_all()
-

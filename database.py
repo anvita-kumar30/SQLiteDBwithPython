@@ -278,5 +278,3 @@ conn.commit()
 
 # Close our connection
 conn.close()
-
-
