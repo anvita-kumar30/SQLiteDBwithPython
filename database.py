@@ -175,6 +175,15 @@ c = conn.cursor()
 # for item in items:
 # 	print(item)
 
+# Drop table
+
+# c.execute("DROP TABLE customers")
+# conn.commit()
+# c.execute("SELECT rowid, * FROM customers")
+# items = c.fetchall()
+# for item in items:
+# 	print(item)
+
 # Commit our command
 conn.commit()
 
