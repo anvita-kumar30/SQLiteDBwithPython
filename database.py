@@ -1,10 +1,11 @@
 import sqlite3
 
+# Connect to DB
 # conn = sqlite3.connect(':memory:')
-conn = sqlite3.connect('customer.db')
+# conn = sqlite3.connect('customer.db')
 
 # Create a cursor
-c = conn.cursor()
+# c = conn.cursor()
 
 # Create a table
 # c.execute("""CREATE TABLE customers (
@@ -184,10 +185,98 @@ c = conn.cursor()
 # for item in items:
 # 	print(item)
 
+# Show All Function (Create the table again and insert the same values)
+
+def show_all():
+	# Connect to DB and create cursor
+	conn = sqlite3.connect('customer.db')
+	c = conn.cursor()
+
+	# Query the DB
+	c.execute("SELECT rowid, * FROM customers")
+	items = c.fetchall()
+
+	for item in items:
+		print(item)
+
+	# Commit our command
+	conn.commit()
+
+	# Close our connection
+	conn.close()
+
+# Add a new record to the table
+
+def add_one(first,last,email):
+	# Connect to DB and create cursor
+	conn = sqlite3.connect('customer.db')
+	c = conn.cursor()
+
+	# Query the DB
+	c.execute("INSERT INTO customers VALUES (?,?,?)", (first, last, email))
+
+	# Commit our command
+	conn.commit()
+
+	# Close our connection
+	conn.close()
+
+# Delete a record from the table
+
+def delete_one(id):
+	# Connect to DB and create cursor
+	conn = sqlite3.connect('customer.db')
+	c = conn.cursor()
+
+	# Query the DB
+	c.execute("DELETE from customers WHERE rowid = (?)", id)
+
+	# Commit our command
+	conn.commit()
+
+	# Close our connection
+	conn.close()
+
+# Add many records to table
+
+def add_many(list):
+	# Connect to DB and create cursor
+	conn = sqlite3.connect('customer.db')
+	c = conn.cursor()
+
+	# Query the DB
+	c.executemany("INSERT INTO customers VALUES (?,?,?)", (list))
+
+	# Commit our command
+	conn.commit()
+
+	# Close our connection
+	conn.close()
+
+# Lookup with where
+
+def email_lookup(email):
+	# Connect to DB and create cursor
+	conn = sqlite3.connect('customer.db')
+	c = conn.cursor()
+
+	# Query the DB
+	c.execute("SELECT rowid, * from customers WHERE email = (?)", (email,))
+	items = c.fetchall()
+
+	for item in items:
+		print(item)
+
+	# Commit our command
+	conn.commit()
+
+	# Close our connection
+	conn.close()
+
 # Commit our command
-conn.commit()
+# conn.commit()
 
 # Close our connection
-conn.close()
+# conn.close()
 
 
